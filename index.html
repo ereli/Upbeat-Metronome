@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <div class="pendulum">
+      <div class="circle"></div>
+    </div>
+    <div class="controls">
+      <div class="tempo-display">
+        <span>
+          <p class="bpmDisplay">60</p>
+        </span>
+      </div>
+      <div class="upDown">
+        <button onclick="increaseTempo()" class="tempo-btn" id="tempoUp">
+          +
+        </button>
+        <button onclick="decreaseTempo()" class="tempo-btn" id="tempoDown">
+          -
+        </button>
+      </div>
+      <div class="space"></div>
+      <div id="onOff" class="play">
+        <!-- <button id="onOff"></button> -->
+      </div>
+    </div>
+    <script src="/script.js"></script>
+  </body>
+</html>

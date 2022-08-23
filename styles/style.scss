@@ -1,0 +1,74 @@
+$textColor: rgb(73, 243, 96);
+$backGroundColor: rgb(43, 42, 42);
+
+body {
+  background-color: $backGroundColor;
+}
+.pendulum {
+  height: 70vh;
+  .circle {
+    border: 30px solid $textColor;
+    border-radius: 100%;
+    height: 0px;
+    width: 0px;
+    margin: 0 auto;
+    position: relative;
+    top: 100%;
+  }
+}
+.controls {
+  position: fixed;
+  bottom: 25px;
+  height: 120px;
+  display: inline-flex;
+  margin: 0 auto;
+  //   border-color: $textColor;
+  //   border-style: solid;
+  //   border-width: 2px;
+
+  .tempo-display {
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 120px;
+    font-size: 80px;
+    margin-top: -60px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: $textColor;
+  }
+
+  #tempoUp {
+    margin-top: 20px;
+  }
+  .tempo-btn {
+    display: block;
+    height: 40px;
+    width: 40px;
+    font-size: 3rem;
+    color: $textColor;
+    background-color: $backGroundColor;
+    border: none;
+  }
+
+  .play {
+    display: inline-block;
+    border-left: 90px solid $textColor;
+    border-top: 45px solid transparent;
+    border-bottom: 45px solid transparent;
+    width: 0px;
+    height: 0px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 25vw;
+  }
+
+  .stop {
+    display: inline-block;
+    border: 45px solid $textColor;
+    width: 0px;
+    height: 0px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 25vw;
+  }
+}

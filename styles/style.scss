@@ -1,19 +1,34 @@
 $textColor: rgb(73, 243, 96);
 $backGroundColor: rgb(43, 42, 42);
 
+@keyframes bounce {
+  from {
+    top: 100%;
+  }
+  to {
+    top: 0%;
+  }
+}
+
 body {
   background-color: $backGroundColor;
 }
 .pendulum {
   height: 70vh;
   .circle {
-    border: 30px solid $textColor;
+    border: 20px solid $textColor;
     border-radius: 100%;
     height: 0px;
     width: 0px;
     margin: 0 auto;
     position: relative;
     top: 100%;
+  }
+  .animation {
+    animation-name: bounce;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
   }
 }
 .controls {

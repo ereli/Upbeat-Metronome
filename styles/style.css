@@ -47,6 +47,7 @@ div {
 
 .pendulum {
   height: 80vh;
+  z-index: 100;
 }
 .pendulum .circle {
   border: 18px solid rgb(73, 243, 96);
@@ -56,7 +57,6 @@ div {
   margin: 0 auto;
   position: relative;
   top: 73vh;
-  z-index: 100;
 }
 .pendulum .animation {
   -webkit-animation-name: bounce;
@@ -70,28 +70,32 @@ div {
 }
 
 .controls {
-  position: fixed;
-  bottom: 25px;
-  height: 120px;
+  position: absolute;
+  bottom: 0px;
+  height: 15vh;
   width: 100%;
   display: inline-flex;
   margin: 0 auto;
 }
 .controls .tempo-display {
   display: inline-block;
+  position: absolute;
   font-family: Arial, Helvetica, sans-serif;
   width: 120px;
-  height: 120px;
+  bottom: 5px;
   font-size: 80px;
-  margin-top: 21px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
   color: rgb(73, 243, 96);
 }
 .controls #tempoUp {
-  margin-top: 20px;
+  bottom: 55px;
+}
+.controls #tempoDown {
+  bottom: 15px;
 }
 .controls .tempo-btn {
+  position: absolute;
   display: block;
   height: 40px;
   width: 40px;
@@ -99,22 +103,20 @@ div {
   color: rgb(73, 243, 96);
   background-color: rgb(43, 42, 42);
   border: none;
+  left: 160px;
 }
 .controls .play {
-  border-left: 90px solid rgb(73, 243, 96);
-  border-top: 45px solid transparent;
-  border-bottom: 45px solid transparent;
+  border-left: 80px solid rgb(73, 243, 96);
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
 }
 .controls .stop {
-  border: 45px solid rgb(73, 243, 96);
+  border: 40px solid rgb(73, 243, 96);
 }
 .controls #onOff {
-  position: fixed;
-  bottom: 35px;
-  right: -73vw;
-  float: right;
-  display: block;
-  width: 1px;
-  height: 1px;
-  margin: auto 75vw auto;
+  position: absolute;
+  bottom: 12px;
+  right: 30px;
+  width: 0px;
+  height: 0px;
 }/*# sourceMappingURL=style.css.map */

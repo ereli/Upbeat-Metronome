@@ -10,7 +10,7 @@ const tempoUpBtn = document.getElementById("tempoUp")
 const tempoDownBtn = document.getElementById("tempoDown")
 const playStopBtn = document.getElementById("onOff")
 const dot = document.getElementById("dot")
-const metClick = new Tone.Player("./click2.mp3").toMaster();
+const metClick = new Tone.Player("click2.mp3").toMaster();
 
 
 const updateDisplay = function () {
@@ -83,10 +83,6 @@ Tone.Transport.scheduleRepeat((time) => {
 
 
 //testing
-// tempoUpBtn.addEventListener('mousedown', function () {
-//     increaseTempo()
-//     setTimeout(() => { increaseTempo() }, 200)
-// })
 
 
 

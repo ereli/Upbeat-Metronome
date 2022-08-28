@@ -1,31 +1,31 @@
 @-webkit-keyframes bounce {
   0% {
-    top: 100%;
+    top: 73vh;
     border-color: rgb(255, 255, 255);
   }
   10% {
     border-color: rgb(255, 255, 255);
   }
-  50% {
+  40% {
     border-color: rgb(73, 243, 96);
   }
   100% {
-    top: 3%;
+    top: 10px;
   }
 }
 @keyframes bounce {
   0% {
-    top: 100%;
+    top: 73vh;
     border-color: rgb(255, 255, 255);
   }
   10% {
     border-color: rgb(255, 255, 255);
   }
-  50% {
+  40% {
     border-color: rgb(73, 243, 96);
   }
   100% {
-    top: 3%;
+    top: 10px;
   }
 }
 body {
@@ -36,8 +36,17 @@ body {
           user-select: none;
 }
 
+p {
+  margin: 0px auto;
+}
+
+div {
+  margin: 0px;
+  padding: 0px;
+}
+
 .pendulum {
-  height: 70vh;
+  height: 80vh;
 }
 .pendulum .circle {
   border: 18px solid rgb(73, 243, 96);
@@ -46,7 +55,7 @@ body {
   width: 0px;
   margin: 0 auto;
   position: relative;
-  top: 100%;
+  top: 73vh;
 }
 .pendulum .animation {
   -webkit-animation-name: bounce;
@@ -73,7 +82,7 @@ body {
   width: 120px;
   height: 120px;
   font-size: 80px;
-  margin-top: -60px;
+  margin-top: 21px;
   margin-left: 20px;
   margin-right: 20px;
   color: rgb(73, 243, 96);
@@ -94,15 +103,9 @@ body {
   border-left: 90px solid rgb(73, 243, 96);
   border-top: 45px solid transparent;
   border-bottom: 45px solid transparent;
-  width: 0px;
-  height: 0px;
-  margin: auto 75vw auto;
 }
 .controls .stop {
   border: 45px solid rgb(73, 243, 96);
-  width: 0px;
-  height: 0px;
-  margin: auto 75vw auto;
 }
 .controls #onOff {
   position: fixed;
@@ -110,4 +113,7 @@ body {
   right: -73vw;
   float: right;
   display: block;
+  width: 1px;
+  height: 1px;
+  margin: auto 75vw auto;
 }/*# sourceMappingURL=style.css.map */

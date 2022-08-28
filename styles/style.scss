@@ -3,18 +3,18 @@ $backGroundColor: rgb(43, 42, 42);
 
 @keyframes bounce {
   0% {
-    top: 100%;
+    top: 73vh;
     border-color: rgb(255, 255, 255);
   }
   10% {
     border-color: rgb(255, 255, 255);
   }
 
-  50% {
+  40% {
     border-color: $textColor;
   }
   100% {
-    top: 3%;
+    top: 10px;
   }
 }
 
@@ -22,8 +22,18 @@ body {
   background-color: $backGroundColor;
   user-select: none;
 }
+
+p {
+  margin: 0px auto;
+}
+
+div {
+  margin: 0px;
+  padding: 0px;
+}
+
 .pendulum {
-  height: 70vh;
+  height: 80vh;
   .circle {
     border: 18px solid $textColor;
     border-radius: 100%;
@@ -31,7 +41,7 @@ body {
     width: 0px;
     margin: 0 auto;
     position: relative;
-    top: 100%;
+    top: 73vh;
   }
   .animation {
     animation-name: bounce;
@@ -58,7 +68,7 @@ body {
     width: 120px;
     height: 120px;
     font-size: 80px;
-    margin-top: -60px;
+    margin-top: 21px;
     margin-left: 20px;
     margin-right: 20px;
     color: $textColor;
@@ -82,21 +92,11 @@ body {
     border-left: 90px solid $textColor;
     border-top: 45px solid transparent;
     border-bottom: 45px solid transparent;
-    width: 0px;
-    height: 0px;
-    margin: auto 75vw auto;
-    // margin-right: 15vw;
-    // margin-top: auto;
-    // margin-bottom: auto;
-    // margin-left: 20vw;
   }
 
   .stop {
     // display: inline-block;
     border: 45px solid $textColor;
-    width: 0px;
-    height: 0px;
-    margin: auto 75vw auto;
   }
 
   #onOff {
@@ -105,5 +105,8 @@ body {
     right: -73vw;
     float: right;
     display: block;
+    width: 1px;
+    height: 1px;
+    margin: auto 75vw auto;
   }
 }

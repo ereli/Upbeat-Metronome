@@ -42,6 +42,7 @@ div {
     margin: 0 auto;
     position: relative;
     top: 73vh;
+    z-index: 100;
   }
   .animation {
     animation-name: bounce;

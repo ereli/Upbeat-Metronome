@@ -3,7 +3,7 @@ $backGroundColor: rgb(43, 42, 42);
 
 @keyframes bounce {
   0% {
-    top: 73vh;
+    bottom: 110px;
     border-color: rgb(255, 255, 255);
   }
   10% {
@@ -14,7 +14,7 @@ $backGroundColor: rgb(43, 42, 42);
     border-color: $textColor;
   }
   100% {
-    top: 10px;
+    bottom: 93%;
   }
 }
 
@@ -41,8 +41,9 @@ div {
     height: 0px;
     width: 0px;
     margin: 0 auto;
-    position: relative;
-    top: 73vh;
+    position: fixed;
+    left: 48vw;
+    bottom: 110px;
   }
   .animation {
     animation-name: bounce;
@@ -56,8 +57,7 @@ div {
   position: absolute;
   bottom: 0px;
   height: 15vh;
-  width: 100%;
-  display: inline-flex;
+  display: block;
   margin: 0 auto;
   //   border-color: $textColor;
   //   border-style: solid;
@@ -67,11 +67,9 @@ div {
     display: inline-block;
     position: absolute;
     font-family: Arial, Helvetica, sans-serif;
-    width: 120px;
+    width: fit-content;
     bottom: 5px;
-    // height: 120px;
     font-size: 80px;
-    // margin-top: 0px;
     margin-left: 10px;
     margin-right: 10px;
     color: $textColor;
@@ -86,7 +84,7 @@ div {
   }
   .tempo-btn {
     position: absolute;
-    display: block;
+    display: inline-block;
     height: 40px;
     width: 40px;
     font-size: 3rem;
@@ -109,9 +107,10 @@ div {
   }
 
   #onOff {
-    position: absolute;
+    position: fixed;
+    display: inline-block;
     bottom: 12px;
-    right: 30px;
+    right: 15px;
     width: 0px;
     height: 0px;
   }

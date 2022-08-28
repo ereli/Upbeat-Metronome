@@ -1,6 +1,6 @@
 @-webkit-keyframes bounce {
   0% {
-    top: 73vh;
+    bottom: 110px;
     border-color: rgb(255, 255, 255);
   }
   10% {
@@ -10,12 +10,12 @@
     border-color: rgb(73, 243, 96);
   }
   100% {
-    top: 10px;
+    bottom: 93%;
   }
 }
 @keyframes bounce {
   0% {
-    top: 73vh;
+    bottom: 110px;
     border-color: rgb(255, 255, 255);
   }
   10% {
@@ -25,7 +25,7 @@
     border-color: rgb(73, 243, 96);
   }
   100% {
-    top: 10px;
+    bottom: 93%;
   }
 }
 body {
@@ -55,8 +55,9 @@ div {
   height: 0px;
   width: 0px;
   margin: 0 auto;
-  position: relative;
-  top: 73vh;
+  position: fixed;
+  left: 48vw;
+  bottom: 110px;
 }
 .pendulum .animation {
   -webkit-animation-name: bounce;
@@ -73,15 +74,16 @@ div {
   position: absolute;
   bottom: 0px;
   height: 15vh;
-  width: 100%;
-  display: inline-flex;
+  display: block;
   margin: 0 auto;
 }
 .controls .tempo-display {
   display: inline-block;
   position: absolute;
   font-family: Arial, Helvetica, sans-serif;
-  width: 120px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   bottom: 5px;
   font-size: 80px;
   margin-left: 10px;
@@ -96,7 +98,7 @@ div {
 }
 .controls .tempo-btn {
   position: absolute;
-  display: block;
+  display: inline-block;
   height: 40px;
   width: 40px;
   font-size: 3rem;
@@ -114,9 +116,10 @@ div {
   border: 40px solid rgb(73, 243, 96);
 }
 .controls #onOff {
-  position: absolute;
+  position: fixed;
+  display: inline-block;
   bottom: 12px;
-  right: 30px;
+  right: 15px;
   width: 0px;
   height: 0px;
 }/*# sourceMappingURL=style.css.map */

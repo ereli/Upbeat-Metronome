@@ -83,3 +83,10 @@ Tone.Transport.scheduleRepeat((time) => {
 
 
 //testing
+// tempoUpBtn.addEventListener('mousedown', function () {
+//     increaseTempo()
+//     setTimeout(() => { increaseTempo() }, 200)
+// })
+
+
+

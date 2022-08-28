@@ -2,21 +2,30 @@ $textColor: rgb(73, 243, 96);
 $backGroundColor: rgb(43, 42, 42);
 
 @keyframes bounce {
-  from {
+  0% {
     top: 100%;
+    border-color: rgb(255, 255, 255);
   }
-  to {
-    top: 0%;
+  10% {
+    border-color: rgb(255, 255, 255);
+  }
+
+  50% {
+    border-color: $textColor;
+  }
+  100% {
+    top: 3%;
   }
 }
 
 body {
   background-color: $backGroundColor;
+  user-select: none;
 }
 .pendulum {
   height: 70vh;
   .circle {
-    border: 20px solid $textColor;
+    border: 18px solid $textColor;
     border-radius: 100%;
     height: 0px;
     width: 0px;
@@ -29,12 +38,14 @@ body {
     animation-duration: 0.5s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    // animation-timing-function: linear;
   }
 }
 .controls {
   position: fixed;
   bottom: 25px;
   height: 120px;
+  width: 100%;
   display: inline-flex;
   margin: 0 auto;
   //   border-color: $textColor;
@@ -44,6 +55,7 @@ body {
   .tempo-display {
     display: inline-block;
     font-family: Arial, Helvetica, sans-serif;
+    width: 120px;
     height: 120px;
     font-size: 80px;
     margin-top: -60px;
@@ -66,24 +78,32 @@ body {
   }
 
   .play {
-    display: inline-block;
+    // display: inline-block;
     border-left: 90px solid $textColor;
     border-top: 45px solid transparent;
     border-bottom: 45px solid transparent;
     width: 0px;
     height: 0px;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: 25vw;
+    margin: auto 75vw auto;
+    // margin-right: 15vw;
+    // margin-top: auto;
+    // margin-bottom: auto;
+    // margin-left: 20vw;
   }
 
   .stop {
-    display: inline-block;
+    // display: inline-block;
     border: 45px solid $textColor;
     width: 0px;
     height: 0px;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: 25vw;
+    margin: auto 75vw auto;
+  }
+
+  #onOff {
+    position: fixed;
+    bottom: 35px;
+    right: -73vw;
+    float: right;
+    display: block;
   }
 }

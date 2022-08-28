@@ -65,7 +65,7 @@ function updateToneBpm() {
 
 function updateAnimationTempo() {
     let secBpm = 60 / bpm / 2
-    console.log(secBpm);
+    // console.log(secBpm);
     dot.style.animationDuration = `${secBpm}s`
 }
 
@@ -77,7 +77,9 @@ function updateAnimationTempo() {
 Tone.Transport.scheduleRepeat((time) => {
     // use the callback time to schedule events
     metClick.start(time)
-    console.log(time);
+    // console.log(time);
 
 }, "4n");
 
+
+//testing

@@ -84,8 +84,9 @@ Tone.Transport.scheduleRepeat((time) => {
 
 const MyClick = new Audio('click2.mp3')
 
-playStopBtn.addEventListener('click', () = > {
+playStopBtn.addEventListener('click', function () {
     setTimeout(MyClick.play(), (60000 / bpm))
+    console.log('click');
 })
 
 

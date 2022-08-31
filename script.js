@@ -45,7 +45,7 @@ const togglePlayStop = function () {
 }
 
 playStopBtn.addEventListener('click', function () {
-    pressPlay()
+    // pressPlay()
     updateAnimationTempo()
 })
 
@@ -106,7 +106,7 @@ Tone.Transport.scheduleRepeat((time) => {
         var AudioContext = window.AudioContext || window.webkitAudioContext;
         var context = new AudioContext(); // Make it crossbrowser
         var gainNode = context.createGain();
-        gainNode.gain.value = 1; // set volume to 100%
+        gainNode.gain.value = 0.9; // set volume to 100%
         // var playButton = document.querySelector('#play');
         var yodelBuffer = void 0;
 
@@ -122,7 +122,8 @@ Tone.Transport.scheduleRepeat((time) => {
             ))
 
         playStopBtn.onclick = function () {
-            return play(yodelBuffer);
+            play(yodelBuffer);
+            togglePlayStop();
         };
 
         // Play the file every 2 seconds. You won't hear it in iOS until the audio context is unlocked.

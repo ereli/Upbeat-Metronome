@@ -39,6 +39,7 @@ const togglePlayStop = function () {
         dot.classList.add('animation');
         // Tone.Transport.start();
         myAudio.play()
+        console.log('test1');
     } else {
         playStopBtn.className = 'play';
         dot.classList.remove('animation');

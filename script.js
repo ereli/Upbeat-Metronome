@@ -10,6 +10,7 @@ const tempoDownBtn = document.getElementById("tempoDown")
 const playStopBtn = document.getElementById("onOff")
 const dot = document.getElementById("dot")
 const metClick = new Tone.Player("click2.mp3").toMaster();
+const myAudio = new Audio('click2.mp3')
 
 
 const updateDisplay = function () {
@@ -36,7 +37,8 @@ const togglePlayStop = function () {
     if (playStopBtn.className === 'play') {
         playStopBtn.className = 'stop';
         dot.classList.add('animation');
-        Tone.Transport.start();
+        // Tone.Transport.start();
+        myAudio.play()
     } else {
         playStopBtn.className = 'play';
         dot.classList.remove('animation');

@@ -41,7 +41,6 @@ const togglePlayStop = function () {
         playStopBtn.className = 'play';
         dot.classList.remove('animation');
         Tone.Transport.stop();
-        console.log('here');
     }
 }
 
@@ -50,18 +49,9 @@ playStopBtn.addEventListener('click', function () {
     updateAnimationTempo()
 })
 
-document.querySelector('.play')?.addEventListener('click', async () => {
-    await Tone.Transport.start()
-    console.log('audio is ready')
-})
 
-// document.querySelector('.stop')?.addEventListener('click', function () {
-//     Tone.Transport.stop()
-//     console.log('audio is stopped')
-// })
 
 const pressPlay = function () {
-    // Tone.start()
     togglePlayStop()
 
 }

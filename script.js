@@ -34,17 +34,7 @@ const decreaseTempo = function () {
 }
 
 const togglePlayStop = function () {
-    if (playStopBtn.className === 'play') {
-        playStopBtn.className = 'stop';
-        dot.classList.add('animation');
-        // Tone.Transport.start();
-        myAudio.play()
-        console.log('test1');
-    } else {
-        playStopBtn.className = 'play';
-        dot.classList.remove('animation');
-        Tone.Transport.stop();
-    }
+
 }
 
 playStopBtn.addEventListener('click', function () {
@@ -55,7 +45,17 @@ playStopBtn.addEventListener('click', function () {
 
 
 const pressPlay = function () {
-    togglePlayStop()
+    // toggle Play / Stop
+    if (playStopBtn.className === 'play') {
+        playStopBtn.className = 'stop';
+        dot.classList.add('animation');
+        Tone.Transport.start();
+        console.log('test2');
+    } else {
+        playStopBtn.className = 'play';
+        dot.classList.remove('animation');
+        Tone.Transport.stop();
+    }
 
 }
 
@@ -74,18 +74,14 @@ function updateAnimationTempo() {
 
 
 
-//things that go on while playing metronome
-
 // repeated event every 4th note
 Tone.Transport.scheduleRepeat((time) => {
-    // use the callback time to schedule events
-    metClick.start(time)
-    // console.log(time);
+
+    // metClick.start(time)
+    console.log(time);
+    myAudio.play(time)
 
 }, "4n");
-
-
-
 
 
 

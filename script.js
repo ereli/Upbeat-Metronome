@@ -50,7 +50,7 @@ const pressPlay = function () {
         playStopBtn.className = 'stop';
         dot.classList.add('animation');
         Tone.Transport.start();
-        console.log('test2');
+        console.log('test3');
     } else {
         playStopBtn.className = 'play';
         dot.classList.remove('animation');
@@ -77,9 +77,9 @@ function updateAnimationTempo() {
 // repeated event every 4th note
 Tone.Transport.scheduleRepeat((time) => {
 
-    // metClick.start(time)
+    metClick.start(time)
     console.log(time);
-    myAudio.play(time)
+    // myAudio.play(time)
 
 }, "4n");
 

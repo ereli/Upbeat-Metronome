@@ -65,7 +65,9 @@ div {
   background-color: rgb(35, 184, 184);
   position: fixed;
   bottom: 105px;
-  height: 86vh;
+  top: 0px;
+  left: 0px;
+  right: 0px;
   width: 100%;
   z-index: 150;
 }
@@ -94,7 +96,7 @@ div {
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  right: 14px;
+  right: 10px;
 }
 
 .animCircle {

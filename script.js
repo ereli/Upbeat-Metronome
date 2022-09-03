@@ -112,12 +112,21 @@ function tempoDown() {
         function () {
             // alert("test")
             longPressDown = setInterval(
-                function () { decreaseTempo() }, 50)
+                function () { decreaseTempo() }, 50);
         }
-        , 1000)
-}
+        , 1000);
+};
 
 function clearTempoDown() {
-    clearTimeout(longPress2)
-    clearInterval(longPressDown)
-}
+    clearTimeout(longPress2);
+    clearInterval(longPressDown);
+};
+
+
+tempoUpBtn.addEventListener('touchstart', tempoUp);
+tempoUpBtn.addEventListener('touchcancel', clearTempoUp);
+tempoUpBtn.addEventListener('touchend', clearTempoUp);
+
+tempoDownBtn.addEventListener('touchstart', tempoDown);
+tempoDownBtn.addEventListener('touchcancel', clearTempoDown);
+tempoDownBtn.addEventListener('touchend', clearTempoDown);

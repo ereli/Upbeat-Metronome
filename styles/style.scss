@@ -51,8 +51,11 @@ div {
 
 .pendulum {
   background-color: rgb(35, 184, 184);
+  position: fixed;
+  bottom: 105px;
   height: 86vh;
-  z-index: 100;
+  width: 100%;
+  z-index: 150;
   // border-bottom: 5px solid black;
   .circle {
     border: 36px solid $textColor;

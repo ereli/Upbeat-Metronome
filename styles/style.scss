@@ -22,7 +22,7 @@ $backGroundColor: rgb(188, 235, 241);
     border-color: $textColor;
   }
   100% {
-    bottom: 90%;
+    bottom: 88%;
   }
 }
 
@@ -131,6 +131,7 @@ div {
 .tempo-btn {
   position: absolute;
   display: inline-block;
+  font-family: "Courier New", Courier, monospace;
   height: 30px;
   width: 40px;
   font-size: 3rem;

@@ -10,7 +10,7 @@
     border-color: rgb(0, 0, 0);
   }
   100% {
-    bottom: 90%;
+    bottom: 88%;
   }
 }
 @keyframes bounce {
@@ -25,7 +25,7 @@
     border-color: rgb(0, 0, 0);
   }
   100% {
-    bottom: 90%;
+    bottom: 88%;
   }
 }
 @-webkit-keyframes circleLight {
@@ -151,6 +151,7 @@ div {
 .tempo-btn {
   position: absolute;
   display: inline-block;
+  font-family: "Courier New", Courier, monospace;
   height: 30px;
   width: 40px;
   font-size: 3rem;

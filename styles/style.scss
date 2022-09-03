@@ -1,11 +1,19 @@
-$textColor: rgb(73, 243, 96);
-$backGroundColor: rgb(43, 42, 42);
+$textColor: rgb(0, 0, 0);
+$backGroundColor: rgb(188, 235, 241);
+
+@mixin center() {
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 @keyframes bounce {
   0% {
     bottom: 110px;
     border-color: rgb(255, 255, 255);
   }
+
   10% {
     border-color: rgb(255, 255, 255);
   }
@@ -14,7 +22,16 @@ $backGroundColor: rgb(43, 42, 42);
     border-color: $textColor;
   }
   100% {
-    bottom: 93%;
+    bottom: 90%;
+  }
+}
+
+@keyframes circleLight {
+  0% {
+    opacity: 20%;
+  }
+  100% {
+    opacity: 0%;
   }
 }
 
@@ -33,26 +50,48 @@ div {
 }
 
 .pendulum {
-  height: 80vh;
+  background-color: rgb(35, 184, 184);
+  height: 86vh;
   z-index: 100;
+  // border-bottom: 5px solid black;
   .circle {
-    border: 18px solid $textColor;
+    border: 36px solid $textColor;
     border-radius: 100%;
     height: 0px;
     width: 0px;
-    margin: 0 auto;
     position: fixed;
-    left: 48vw;
+
+    @include center();
     bottom: 110px;
   }
-  .animation {
-    animation-name: bounce;
-    animation-duration: 0.5s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    // animation-timing-function: linear;
-  }
 }
+
+.bigC {
+  height: 78px;
+  width: 78px;
+  // background-color: white;
+  border-radius: 100%;
+  border: 3px solid $textColor;
+  opacity: 0%;
+  position: absolute;
+  bottom: 103px;
+  @include center();
+}
+
+.animCircle {
+  animation-name: circleLight;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+}
+
+.animation {
+  animation-name: bounce;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  // animation-timing-function: linear;
+}
+
 .controls {
   position: absolute;
   bottom: 0px;
@@ -74,44 +113,47 @@ div {
     margin-right: 10px;
     color: $textColor;
   }
+}
 
-  #tempoUp {
-    bottom: 55px;
-  }
+#tempoUp {
+  bottom: 55px;
+}
 
-  #tempoDown {
-    bottom: 15px;
-  }
-  .tempo-btn {
-    position: absolute;
-    display: inline-block;
-    height: 40px;
-    width: 40px;
-    font-size: 3rem;
-    color: $textColor;
-    background-color: $backGroundColor;
-    border: none;
-    left: 160px;
-  }
+#tempoDown {
+  bottom: 25px;
+}
+.tempo-btn {
+  position: absolute;
+  display: inline-block;
+  height: 30px;
+  width: 40px;
+  font-size: 3rem;
+  color: $textColor;
+  background-color: $backGroundColor;
+  border: none;
+  left: 150px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 30px;
+}
 
-  .play {
-    // display: inline-block;
-    border-left: 80px solid $textColor;
-    border-top: 40px solid transparent;
-    border-bottom: 40px solid transparent;
-  }
+.play {
+  // display: inline-block;
+  border-left: 80px solid $textColor;
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+}
 
-  .stop {
-    // display: inline-block;
-    border: 40px solid $textColor;
-  }
+.stop {
+  // display: inline-block;
+  border: 40px solid $textColor;
+}
 
-  #onOff {
-    position: fixed;
-    display: inline-block;
-    bottom: 12px;
-    right: 15px;
-    width: 0px;
-    height: 0px;
-  }
+#onOff {
+  position: fixed;
+  display: inline-block;
+  bottom: 12px;
+  right: 15px;
+  width: 0px;
+  height: 0px;
 }

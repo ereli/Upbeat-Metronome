@@ -7,10 +7,10 @@
     border-color: rgb(255, 255, 255);
   }
   40% {
-    border-color: rgb(73, 243, 96);
+    border-color: rgb(0, 0, 0);
   }
   100% {
-    bottom: 93%;
+    bottom: 90%;
   }
 }
 @keyframes bounce {
@@ -22,14 +22,30 @@
     border-color: rgb(255, 255, 255);
   }
   40% {
-    border-color: rgb(73, 243, 96);
+    border-color: rgb(0, 0, 0);
   }
   100% {
-    bottom: 93%;
+    bottom: 90%;
+  }
+}
+@-webkit-keyframes circleLight {
+  0% {
+    opacity: 20%;
+  }
+  100% {
+    opacity: 0%;
+  }
+}
+@keyframes circleLight {
+  0% {
+    opacity: 20%;
+  }
+  100% {
+    opacity: 0%;
   }
 }
 body {
-  background-color: rgb(43, 42, 42);
+  background-color: rgb(188, 235, 241);
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -46,20 +62,47 @@ div {
 }
 
 .pendulum {
-  height: 80vh;
+  background-color: rgb(35, 184, 184);
+  height: 86vh;
   z-index: 100;
 }
 .pendulum .circle {
-  border: 18px solid rgb(73, 243, 96);
+  border: 36px solid rgb(0, 0, 0);
   border-radius: 100%;
   height: 0px;
   width: 0px;
-  margin: 0 auto;
   position: fixed;
-  left: 48vw;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
   bottom: 110px;
 }
-.pendulum .animation {
+
+.bigC {
+  height: 78px;
+  width: 78px;
+  border-radius: 100%;
+  border: 3px solid rgb(0, 0, 0);
+  opacity: 0%;
+  position: absolute;
+  bottom: 103px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.animCircle {
+  -webkit-animation-name: circleLight;
+          animation-name: circleLight;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.animation {
   -webkit-animation-name: bounce;
           animation-name: bounce;
   -webkit-animation-duration: 0.5s;
@@ -88,34 +131,43 @@ div {
   font-size: 80px;
   margin-left: 10px;
   margin-right: 10px;
-  color: rgb(73, 243, 96);
+  color: rgb(0, 0, 0);
 }
-.controls #tempoUp {
+
+#tempoUp {
   bottom: 55px;
 }
-.controls #tempoDown {
-  bottom: 15px;
+
+#tempoDown {
+  bottom: 25px;
 }
-.controls .tempo-btn {
+
+.tempo-btn {
   position: absolute;
   display: inline-block;
-  height: 40px;
+  height: 30px;
   width: 40px;
   font-size: 3rem;
-  color: rgb(73, 243, 96);
-  background-color: rgb(43, 42, 42);
+  color: rgb(0, 0, 0);
+  background-color: rgb(188, 235, 241);
   border: none;
-  left: 160px;
+  left: 150px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 30px;
 }
-.controls .play {
-  border-left: 80px solid rgb(73, 243, 96);
+
+.play {
+  border-left: 80px solid rgb(0, 0, 0);
   border-top: 40px solid transparent;
   border-bottom: 40px solid transparent;
 }
-.controls .stop {
-  border: 40px solid rgb(73, 243, 96);
+
+.stop {
+  border: 40px solid rgb(0, 0, 0);
 }
-.controls #onOff {
+
+#onOff {
   position: fixed;
   display: inline-block;
   bottom: 12px;

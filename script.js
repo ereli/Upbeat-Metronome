@@ -9,8 +9,8 @@ const tempoUpBtn = document.getElementById("tempoUp")
 const tempoDownBtn = document.getElementById("tempoDown")
 const playStopBtn = document.getElementById("onOff")
 const dot = document.getElementById("dot")
-const metClick = new Tone.Player("click2.mp3").toMaster();
-const myAudio = new Audio('click2.mp3')
+const metClick = new Tone.Player('click3.wav').toMaster();
+
 
 
 const updateDisplay = function () {
@@ -49,11 +49,13 @@ const pressPlay = function () {
     if (playStopBtn.className === 'play') {
         playStopBtn.className = 'stop';
         dot.classList.add('animation');
+        document.querySelector('.bigC').classList.add('animCircle');
         Tone.Transport.start();
         console.log('test3');
     } else {
         playStopBtn.className = 'play';
         dot.classList.remove('animation');
+        document.querySelector('.bigC').classList.remove('animCircle');
         Tone.Transport.stop();
     }
 
@@ -62,13 +64,14 @@ const pressPlay = function () {
 function updateToneBpm() {
     Tone.Transport.bpm.value = bpm
     const toneBpm = Tone.Transport.bpm.value
-    // console.log(toneBpm);
+
 }
 
 
 function updateAnimationTempo() {
     let secBpm = 60 / bpm / 2
-    // console.log(secBpm);
+    document.querySelector('.bigC').style.animationDuration = `${secBpm * 2}s`
+
     dot.style.animationDuration = `${secBpm}s`
 }
 
@@ -78,11 +81,46 @@ function updateAnimationTempo() {
 Tone.Transport.scheduleRepeat((time) => {
 
     metClick.start(time)
-    console.log(time);
-    // myAudio.play(time)
 
 }, "4n");
 
 
 
 //try
+let longPress;
+let longPressUp;
+
+function tempoUp() {
+    longPress = setTimeout(
+
+        function () {
+            // alert("test")
+            longPressUp = setInterval(
+                function () { increaseTempo() }, 100)
+        }
+        , 1000)
+}
+
+function clearTempoUp() {
+    clearTimeout(longPress)
+    clearInterval(longPressUp)
+}
+
+let longPress2;
+let longPressDown;
+
+function tempoDown() {
+    longPress2 = setTimeout(
+
+        function () {
+            // alert("test")
+            longPressDown = setInterval(
+                function () { decreaseTempo() }, 100)
+        }
+        , 1000)
+}
+
+function clearTempoDown() {
+    clearTimeout(longPress2)
+    clearInterval(longPressDown)
+}

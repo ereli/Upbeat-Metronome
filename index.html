@@ -11,6 +11,7 @@
   <body>
     <div class="pendulum">
       <div id="dot" class="circle"></div>
+      <div class="bigC"></div>
     </div>
     <div class="controls">
       <div class="tempo-display">
@@ -19,10 +20,24 @@
         </div>
       </div>
       <div class="upDown">
-        <button onclick="increaseTempo()" class="tempo-btn" id="tempoUp">
+        <button
+          onclick="increaseTempo()"
+          onmousedown="tempoUp()"
+          onmouseup="clearTempoUp()"
+          onmouseout="clearTempoUp()"
+          class="tempo-btn"
+          id="tempoUp"
+        >
           +
         </button>
-        <button onclick="decreaseTempo()" class="tempo-btn" id="tempoDown">
+        <button
+          onclick="decreaseTempo()"
+          onmousedown="tempoDown()"
+          onmouseup="clearTempoDown()"
+          onmouseout="clearTempoDown()"
+          class="tempo-btn"
+          id="tempoDown"
+        >
           -
         </button>
       </div>

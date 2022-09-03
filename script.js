@@ -53,6 +53,7 @@ const pressPlay = function () {
         Tone.context.resume().then(() => {
             Tone.Transport.start();
         })
+        console.log(Tone.context);
     } else {
         playStopBtn.className = 'play';
         dot.classList.remove('animation');

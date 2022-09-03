@@ -50,8 +50,9 @@ const pressPlay = function () {
         playStopBtn.className = 'stop';
         dot.classList.add('animation');
         document.querySelector('.bigC').classList.add('animCircle');
-        Tone.Transport.start();
-
+        Tone.context.resume().then(() => {
+            Tone.Transport.start();
+        })
     } else {
         playStopBtn.className = 'play';
         dot.classList.remove('animation');

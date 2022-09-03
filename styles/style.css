@@ -83,17 +83,18 @@ div {
 }
 
 .bigC {
-  height: 78px;
-  width: 78px;
+  height: 69px;
+  width: 69px;
   border-radius: 100%;
   border: 3px solid rgb(0, 0, 0);
   opacity: 0%;
   position: absolute;
-  bottom: 103px;
+  bottom: 3px;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
+  right: 14px;
 }
 
 .animCircle {

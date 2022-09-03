@@ -70,15 +70,16 @@ div {
 }
 
 .bigC {
-  height: 78px;
-  width: 78px;
+  height: 69px;
+  width: 69px;
   // background-color: white;
   border-radius: 100%;
   border: 3px solid $textColor;
   opacity: 0%;
   position: absolute;
-  bottom: 103px;
+  bottom: 3px;
   @include center();
+  right: 14px;
 }
 
 .animCircle {

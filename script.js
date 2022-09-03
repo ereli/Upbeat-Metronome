@@ -51,7 +51,7 @@ const pressPlay = function () {
         dot.classList.add('animation');
         document.querySelector('.bigC').classList.add('animCircle');
         Tone.Transport.start();
-        console.log('test3');
+
     } else {
         playStopBtn.className = 'play';
         dot.classList.remove('animation');
@@ -71,7 +71,6 @@ function updateToneBpm() {
 function updateAnimationTempo() {
     let secBpm = 60 / bpm / 2
     document.querySelector('.bigC').style.animationDuration = `${secBpm * 2}s`
-
     dot.style.animationDuration = `${secBpm}s`
 }
 
@@ -85,8 +84,6 @@ Tone.Transport.scheduleRepeat((time) => {
 }, "4n");
 
 
-
-//try
 let longPress;
 let longPressUp;
 
@@ -96,7 +93,7 @@ function tempoUp() {
         function () {
             // alert("test")
             longPressUp = setInterval(
-                function () { increaseTempo() }, 100)
+                function () { increaseTempo() }, 50)
         }
         , 1000)
 }
@@ -115,7 +112,7 @@ function tempoDown() {
         function () {
             // alert("test")
             longPressDown = setInterval(
-                function () { decreaseTempo() }, 100)
+                function () { decreaseTempo() }, 50)
         }
         , 1000)
 }

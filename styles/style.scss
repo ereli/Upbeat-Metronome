@@ -18,7 +18,7 @@ $backGroundColor: rgb(188, 235, 241);
     border-color: rgb(255, 255, 255);
   }
 
-  40% {
+  30% {
     border-color: $textColor;
   }
   100% {
@@ -52,12 +52,13 @@ div {
 .pendulum {
   background-color: rgb(35, 184, 184);
   position: fixed;
-  bottom: 105px;
+  bottom: 135px;
   top: 0px;
   left: 0px;
   right: 0px;
   width: 100%;
   z-index: 150;
+  border-bottom: 2px solid $textColor;
   // border-bottom: 5px solid black;
   .circle {
     border: 36px solid $textColor;
@@ -65,10 +66,20 @@ div {
     height: 0px;
     width: 0px;
     position: fixed;
-
     @include center();
     bottom: 110px;
   }
+}
+
+.pendulum::before {
+  content: "";
+  width: 88px;
+  height: calc(100% + 5.5px);
+  background-color: rgb(35, 184, 184);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .bigC {
@@ -77,11 +88,11 @@ div {
   // background-color: white;
   border-radius: 100%;
   border: 3px solid $textColor;
-  opacity: 0%;
+  opacity: 10%;
   position: absolute;
-  bottom: 3px;
+  bottom: -27px;
   @include center();
-  right: 10px;
+  // right: 10px;
 }
 
 .animCircle {
@@ -100,7 +111,7 @@ div {
 
 .controls {
   position: absolute;
-  bottom: 0px;
+  bottom: 15px;
   height: 15vh;
   display: block;
   margin: 0 auto;
@@ -112,33 +123,35 @@ div {
     display: inline-block;
     position: absolute;
     font-family: Arial, Helvetica, sans-serif;
-    width: fit-content;
-    bottom: 5px;
-    font-size: 80px;
-    margin-left: 10px;
-    margin-right: 10px;
+    width: 105px;
+    bottom: 15px;
+    font-size: 4rem;
+    // margin-left: px;
+    // margin-right: 10px;
+    text-align: right;
     color: $textColor;
   }
 }
 
 #tempoUp {
-  bottom: 55px;
+  bottom: 50px;
 }
 
 #tempoDown {
-  bottom: 25px;
+  bottom: 19px;
 }
 .tempo-btn {
   position: absolute;
   display: inline-block;
   font-family: "Courier New", Courier, monospace;
-  height: 30px;
+  height: 35px;
   width: 40px;
-  font-size: 3rem;
+  font-weight: 800;
+  font-size: 2.4rem;
   color: $textColor;
   background-color: $backGroundColor;
   border: none;
-  left: 150px;
+  left: 106px;
   text-align: center;
   vertical-align: middle;
   line-height: 30px;
@@ -159,7 +172,7 @@ div {
 #onOff {
   position: fixed;
   display: inline-block;
-  bottom: 12px;
+  bottom: 26px;
   right: 15px;
   width: 0px;
   height: 0px;

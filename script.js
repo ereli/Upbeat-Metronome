@@ -53,7 +53,7 @@ const pressPlay = function () {
         Tone.context.resume().then(() => {
             Tone.Transport.start();
         })
-        console.log(Tone.context);
+        checkAudContextInterval
     } else {
         playStopBtn.className = 'play';
         dot.classList.remove('animation');
@@ -132,3 +132,17 @@ tempoUpBtn.addEventListener('touchend', clearTempoUp);
 tempoDownBtn.addEventListener('touchstart', tempoDown);
 tempoDownBtn.addEventListener('touchcancel', clearTempoDown);
 tempoDownBtn.addEventListener('touchend', clearTempoDown);
+
+// console.log(Tone.context._context);
+
+var checkAudContextInterval = setInterval(function () {
+    if (typeof getAudioContext !== 'undefined') {
+        getAudioContext().onstatechange = function () {
+            // console.log(getAudioContext().state);
+            if (getAudioContext().state === 'suspended' || getAudioContext().state === 'interrupted') {
+                getAudioContext().resume();
+            }
+        };
+        clearInterval(checkAudContextInterval);
+    }
+}, 1000);

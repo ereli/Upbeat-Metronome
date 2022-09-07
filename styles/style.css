@@ -174,20 +174,21 @@ div {
 }
 
 .play {
-  border-left: 80px solid rgb(0, 0, 0);
-  border-top: 40px solid transparent;
-  border-bottom: 40px solid transparent;
+  border-left: 55px solid rgb(0, 0, 0);
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  right: 15px;
 }
 
 .stop {
-  border: 40px solid rgb(0, 0, 0);
+  border: 25px solid rgb(0, 0, 0);
+  right: 20px;
 }
 
 #onOff {
   position: fixed;
   display: inline-block;
-  bottom: 26px;
-  right: 15px;
+  bottom: 43px;
   width: 0px;
   height: 0px;
 }/*# sourceMappingURL=style.css.map */

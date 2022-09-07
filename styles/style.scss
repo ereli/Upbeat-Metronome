@@ -159,21 +159,22 @@ div {
 
 .play {
   // display: inline-block;
-  border-left: 80px solid $textColor;
-  border-top: 40px solid transparent;
-  border-bottom: 40px solid transparent;
+  border-left: 55px solid $textColor;
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  right: 15px;
 }
 
 .stop {
   // display: inline-block;
-  border: 40px solid $textColor;
+  border: 25px solid $textColor;
+  right: 20px;
 }
 
 #onOff {
   position: fixed;
   display: inline-block;
-  bottom: 26px;
-  right: 15px;
+  bottom: 43px;
   width: 0px;
   height: 0px;
 }

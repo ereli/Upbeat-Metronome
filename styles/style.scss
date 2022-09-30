@@ -8,19 +8,28 @@ $backGroundColor: rgb(188, 235, 241);
   margin-right: auto;
 }
 
+@mixin circleNoBorderBottom() {
+  border-radius: 100%;
+  height: 0px;
+  width: 0px;
+  position: fixed;
+  @include center();
+}
+
 @keyframes bounce {
   0% {
     bottom: 110px;
-    border-color: rgb(255, 255, 255);
   }
+  //   border-color: rgb(255, 255, 255);
+  // }
 
-  10% {
-    border-color: rgb(255, 255, 255);
-  }
+  // 10% {
+  //   border-color: rgb(255, 255, 255);
+  // }
 
-  30% {
-    border-color: $textColor;
-  }
+  // 30% {
+  //   border-color: $textColor;
+  // }
   100% {
     bottom: 88%;
   }
@@ -31,6 +40,15 @@ $backGroundColor: rgb(188, 235, 241);
     opacity: 20%;
   }
   100% {
+    opacity: 0%;
+  }
+}
+
+@keyframes whiteLight {
+  0% {
+    opacity: 100%;
+  }
+  40% {
     opacity: 0%;
   }
 }
@@ -62,12 +80,20 @@ div {
   // border-bottom: 5px solid black;
   .circle {
     border: 36px solid $textColor;
-    border-radius: 100%;
-    height: 0px;
-    width: 0px;
-    position: fixed;
-    @include center();
+    @include circleNoBorderBottom();
     bottom: 110px;
+  }
+  .whiteCdn {
+    border: 36px solid white;
+    @include circleNoBorderBottom();
+    bottom: 110px;
+    opacity: 0%;
+  }
+  .whiteCup {
+    border: 36px solid white;
+    @include circleNoBorderBottom();
+    bottom: 88%;
+    opacity: 0%;
   }
 }
 
@@ -107,6 +133,12 @@ div {
   animation-iteration-count: infinite;
   animation-direction: alternate;
   // animation-timing-function: linear;
+}
+
+.animWhite {
+  animation-name: whiteLight;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
 }
 
 .controls {

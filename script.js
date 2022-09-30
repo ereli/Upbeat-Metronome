@@ -3,7 +3,7 @@
 let bpm = 60
 updateToneBpm()
 const bpmTopLimit = 300
-const bpmBottomLimit = 35
+const bpmBottomLimit = 20
 let bpmDisplay = document.querySelector(".bpmDisplay").innerText
 const tempoUpBtn = document.getElementById("tempoUp")
 const tempoDownBtn = document.getElementById("tempoDown")
@@ -42,14 +42,23 @@ playStopBtn.addEventListener('click', function () {
     updateAnimationTempo()
 })
 
-
+function animateUpbeat() {
+    document.querySelector('.whiteCup').classList.add('animWhite');
+}
 
 const pressPlay = function () {
     // toggle Play / Stop
+    let secBpm2 = 60000 / bpm / 2
     if (playStopBtn.className === 'play') {
         playStopBtn.className = 'stop';
         dot.classList.add('animation');
         document.querySelector('.bigC').classList.add('animCircle');
+        document.querySelector('.whiteCdn').classList.add('animWhite');
+        // uncomenting this will animate a white ball to the off beat
+        // not sure if it is a good idea...
+        // setTimeout(animateUpbeat, secBpm2)
+
+
         Tone.context.resume().then(() => {
             Tone.Transport.start();
         })
@@ -58,6 +67,8 @@ const pressPlay = function () {
         playStopBtn.className = 'play';
         dot.classList.remove('animation');
         document.querySelector('.bigC').classList.remove('animCircle');
+        document.querySelector('.whiteCdn').classList.remove('animWhite');
+        document.querySelector('.whiteCup').classList.remove('animWhite');
         Tone.Transport.stop();
     }
 
@@ -73,6 +84,8 @@ function updateToneBpm() {
 function updateAnimationTempo() {
     let secBpm = 60 / bpm / 2
     document.querySelector('.bigC').style.animationDuration = `${secBpm * 2}s`
+    document.querySelector('.whiteCdn').style.animationDuration = `${secBpm * 2}s`
+    document.querySelector('.whiteCup').style.animationDuration = `${secBpm * 2}s`
     dot.style.animationDuration = `${secBpm}s`
 }
 
@@ -100,9 +113,35 @@ function tempoUp() {
         , 1000)
 }
 
+const syncClick = function () {
+    // toggle Play / Stop
+    // let secBpm2 = 60000 / bpm / 2
+    if (playStopBtn.className === 'stop') {
+        dot.classList.remove('animation');
+        document.querySelector('.whiteCdn').classList.remove('animWhite');
+        document.querySelector('.bigC').classList.remove('animCircle');
+        Tone.Transport.stop();
+        setTimeout(function () {
+
+            Tone.Transport.start();
+
+            checkAudContextInterval
+            dot.classList.add('animation');
+            document.querySelector('.bigC').classList.add('animCircle');
+            document.querySelector('.whiteCdn').classList.add('animWhite');
+            // uncomenting this will animate a white ball to the off beat
+            // not sure if it is a good idea...
+            // setTimeout(animateUpbeat, secBpm2)
+        }, 50)
+
+    }
+
+}
+
 function clearTempoUp() {
     clearTimeout(longPress)
     clearInterval(longPressUp)
+    syncClick()
 }
 
 let longPress2;
@@ -122,6 +161,7 @@ function tempoDown() {
 function clearTempoDown() {
     clearTimeout(longPress2);
     clearInterval(longPressDown);
+    syncClick()
 };
 
 
